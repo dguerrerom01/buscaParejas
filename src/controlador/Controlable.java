@@ -1,5 +1,7 @@
 package controlador;
 
+import modelo.Tablero;
+
 public interface Controlable {
 
 	
@@ -18,5 +20,5 @@ public interface Controlable {
 	/**
 	 * le asigna el id a cada carta
 	 */
-	public void ponerIDCarta();
+	public Tablero ponerIDCarta(Dificultad dificultad);
 }

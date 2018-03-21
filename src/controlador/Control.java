@@ -1,5 +1,7 @@
 package controlador;
 
+import modelo.Tablero;
+
 public class Control implements Controlable{
 
 	@Override
@@ -15,8 +17,10 @@ public class Control implements Controlable{
 	}
 
 	@Override
-	public void ponerIDCarta() {
-		// TODO Auto-generated method stub
+	public Tablero ponerIDCarta(Dificultad dificultad) {
+		Tablero tablero = new Tablero(dificultad);
+		// TODO metodo fran
+		return tablero;
 		
 	}
 	
