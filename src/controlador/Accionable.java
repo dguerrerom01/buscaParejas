@@ -1,5 +1,15 @@
 package controlador;
 
 public interface Accionable {
-	public void accionClickI();
+
+	/**
+	 * bucle que lleva el curso del juego
+	 */
+	public void game();
+	
+	
+	/**
+	 * funcionamiento del click izquierdo
+	 */
+	public void accionClickIzquierdo();
 }
