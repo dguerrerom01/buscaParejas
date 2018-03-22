@@ -7,7 +7,7 @@ public interface Accionable {
 	/**
 	 * bucle que lleva el curso del juego
 	 */
-	public void game(Tablero tablero);
+	public void game();
 	
 	
 	/**
@@ -17,6 +17,8 @@ public interface Accionable {
 
 
 	public void jugada();
+
+
 
 
 	

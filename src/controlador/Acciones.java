@@ -1,5 +1,6 @@
 package controlador;
 
+import modelo.Carta;
 import modelo.Tablero;
 
 public class Acciones implements Accionable{
@@ -7,11 +8,15 @@ Iniciador iniciador = new Iniciador();
 Control control = new Control();
 
 	@Override
-	public void game(Tablero tablero) {
+	public void game() {
 		Dificultad dificultad = Dificultad.dificil; // esto viene automatico
-		tablero = iniciador.crearTablero(dificultad);
+		Tablero tablero = iniciador.crearTablero(dificultad);
 		// TODO botonera listener, se podria poner en la misma botonera al
 		// crearlo
+		Carta[] cartas = tablero.getCartas();
+		for (int i = 0; i < cartas.length; i++) {
+			System.out.println(cartas[i].getId());
+		}
 		jugada();
 	}
 	

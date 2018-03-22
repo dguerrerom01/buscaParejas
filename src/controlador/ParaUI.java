@@ -15,8 +15,8 @@ public class ParaUI extends UITest {
 		btnIniciarGame.addActionListener(listener);
 	}
 
-	public void game() {
-		acciones.game(tablero);
+	public void lanzarGame() {
+		acciones.game();
 	}
 
 
