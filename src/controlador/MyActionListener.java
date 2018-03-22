@@ -12,13 +12,13 @@ public class MyActionListener implements ActionListener,MouseListener{
 	ParaUI paraUI;
 	Acciones acciones = new Acciones();
 	public MyActionListener(ParaUI paraUI) {
-		this.paraUI=new ParaUI();
+		this.paraUI= paraUI;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (((JButton) e.getSource()).getName() == "btnIniciar") {
-			paraUI.game();
+			paraUI.lanzarGame();
 		}
 	}
 

@@ -2,30 +2,35 @@ package controlador;
 
 import modelo.Tablero;
 
-public class Control implements Controlable{
+public class Control implements Controlable {
 
 	@Override
-	public boolean comprobarGana() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean comprobarGana(Tablero tablero) {
+		boolean win = false;
+		for (int i = 0; i < tablero.getCartas().length; i++) {
+			if (tablero.getCartas()[i].isVelada())
+				win = false;
+		}
+		return win;
 	}
 
 	@Override
-	public boolean comprobarPierde() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean comprobarPierde(Tablero tablero) {
+		if (tablero.getIntentos() < 0)
+			return true;
+		else
+			return false;
 	}
 
 	@Override
 	public Tablero ponerIDCarta(Dificultad dificultad) {
 		Tablero tablero = new Tablero(dificultad);
-		int[] arrayId = CrearArrayDesordenado(dificultad.getValor()*2);
+		int[] arrayId = CrearArrayDesordenado(dificultad.getValor() * 2);
 		for (int i = 0; i < arrayId.length; i++) {
 			tablero.getCartas()[i].setId(arrayId[i]);
-		}	
-		return tablero;	
+		}
+		return tablero;
 	}
-	
 
 	private int[] CrearArrayDesordenado(int dificultad) {
 		return desordenarArray(crearArrayNumeros(dificultad));
@@ -52,5 +57,6 @@ public class Control implements Controlable{
 		return array;
 	}
 
-	
+
+
 }
