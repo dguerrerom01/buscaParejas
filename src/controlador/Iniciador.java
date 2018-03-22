@@ -7,8 +7,6 @@ public class Iniciador implements Iniciable{
 	@Override
 	public Tablero crearTablero(Dificultad dificultad) {
 		return control.ponerIDCarta(dificultad);
-		// TODO crea el tablero
-		
 	}
 
 }

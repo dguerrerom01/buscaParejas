@@ -1,14 +1,15 @@
 package modelo;
 
 import controlador.Dificultad;
+import utiles.Utiles;
 
 public class Tablero {
 	Carta[] cartas;
-
+	int intentos;
 	public Tablero(Dificultad dificultad) {
 		super();
-		int size=dificultad.getValor();
-		this.cartas=new Carta[size*2];
+		this.cartas=new Carta[dificultad.getValor()*2];
+		this.intentos=dificultad.getValor();
 		for (int i = 0; i < cartas.length; i++) {
 			cartas[i]=new Carta();
 		}
