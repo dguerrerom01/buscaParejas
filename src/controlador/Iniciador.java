@@ -1,11 +1,12 @@
 package controlador;
 
-public class Iniciador implements Iniciable{
+import modelo.Tablero;
 
+public class Iniciador implements Iniciable{
+	Control control=new Control();
 	@Override
-	public void crearTablero(Dificultad dificultad) {
-		// TODO crea el tablero
-		
+	public Tablero crearTablero(Dificultad dificultad) {
+		return control.ponerIDCarta(dificultad);
 	}
 
 }

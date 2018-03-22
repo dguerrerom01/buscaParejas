@@ -1,7 +1,9 @@
 package controlador;
 
+import utiles.Utiles;
+
 public enum Dificultad {
-facil(5),medio(15),dificil(25);
+facil(Utiles.facil),medio(Utiles.medio),dificil(Utiles.dificil);
 	private int valor;
 
 

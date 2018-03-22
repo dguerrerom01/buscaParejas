@@ -1,8 +1,13 @@
 /controlador/
 /modelo/
+/test/
 /utiles/
 <<<<<<< HEAD
 =======
 /vista/
+<<<<<<< HEAD
 /test/
+>>>>>>> refs/remotes/PongaSuNombreAqui/master
+=======
+/assets/
 >>>>>>> refs/remotes/PongaSuNombreAqui/master
