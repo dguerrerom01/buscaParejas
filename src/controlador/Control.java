@@ -6,8 +6,9 @@ public class Control implements Controlable {
 
 	@Override
 	public boolean comprobarGana(Tablero tablero) {
-		boolean win = false;
+		boolean win = true;
 		for (int i = 0; i < tablero.getCartas().length; i++) {
+			System.out.println(tablero.getCartas()[i].isVelada());
 			if (tablero.getCartas()[i].isVelada())
 				win = false;
 		}
@@ -31,6 +32,7 @@ public class Control implements Controlable {
 		}
 		return tablero;
 	}
+
 
 	private int[] CrearArrayDesordenado(int dificultad) {
 		return desordenarArray(crearArrayNumeros(dificultad));
