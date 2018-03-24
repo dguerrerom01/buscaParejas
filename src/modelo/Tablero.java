@@ -20,9 +20,6 @@ public class Tablero {
 		return intentos;
 	}
 
-	public void setIntentos(int intentos) {
-		this.intentos = intentos;
-	}
 
 	public Carta[] getCartas() {
 		return cartas;
@@ -30,6 +27,11 @@ public class Tablero {
 
 	public void setCartas(Carta[] cartas) {
 		this.cartas = cartas;
+	}
+
+	public void fallo() {
+		this.intentos--;
+		
 	}
 	
 }
