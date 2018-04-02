@@ -23,7 +23,6 @@ public class MyActionListener implements ActionListener,MouseListener{
 		}
 			else{
 			int pulsado = Integer.valueOf(((JButton) e.getSource()).getName());
-			System.out.println("boton pulsado: "+pulsado);
 			acciones.jugada(pulsado);
 		}
 	}

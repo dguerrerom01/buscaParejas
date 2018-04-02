@@ -10,7 +10,7 @@ public class Tablero {
 	public Tablero(Dificultad dificultad) {
 		super();
 		this.cartas=new Carta[dificultad.getValor()*2];
-		this.intentos=dificultad.getValor();
+		this.intentos=(int) (dificultad.getValor()*4);
 		for (int i = 0; i < cartas.length; i++) {
 			cartas[i]=new Carta();
 		}

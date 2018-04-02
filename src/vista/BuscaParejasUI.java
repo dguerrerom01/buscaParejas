@@ -58,7 +58,7 @@ public class BuscaParejasUI extends JFrame {
 		contentPane.setLayout(new CardLayout(0, 0));
 
 		juego = new JPanel();
-		contentPane.add(juego, "name_7067112465305");
+		contentPane.add(juego, "name_juego");
 
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[] { 0, 0, 0, 0 };
@@ -89,8 +89,7 @@ public class BuscaParejasUI extends JFrame {
 		btnIniciarGame.setName("btnIniciar");
 		btnIniciarGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				((CardLayout) contentPane.getLayout()).show(contentPane, "name_6782640056703");
+				((CardLayout) contentPane.getLayout()).show(contentPane, "name_tablero");
 			}
 		});
 		btnIniciarGame.setBorderPainted(false);
@@ -137,7 +136,7 @@ public class BuscaParejasUI extends JFrame {
 
 	private void crearTablero(int columnas, int botones) {
 		tablero = new JPanel();
-		contentPane.add(tablero, "name_6782640056703");
+		contentPane.add(tablero, "name_tablero");
 		GridBagLayout gbl_Tablero = new GridBagLayout();
 		gbl_Tablero.columnWidths = new int[] { 0, 0 };
 		gbl_Tablero.rowHeights = new int[] { 0, 0, 0, 0 };

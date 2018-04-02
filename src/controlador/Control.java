@@ -8,7 +8,6 @@ public class Control implements Controlable {
 	public boolean comprobarGana(Tablero tablero) {
 		boolean win = true;
 		for (int i = 0; i < tablero.getCartas().length; i++) {
-			System.out.println(tablero.getCartas()[i].isVelada());
 			if (tablero.getCartas()[i].isVelada())
 				win = false;
 		}
