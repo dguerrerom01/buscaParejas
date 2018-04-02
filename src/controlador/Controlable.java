@@ -18,7 +18,7 @@ public interface Controlable {
 	public boolean comprobarPierde(Tablero tablero);
 	
 	/**
-	 * le asigna el id a cada carta
+	 * le asigna un id a cada carta, el id solo se puede repetir 2 veces, y tiene que ser >= 0 y <dificultad
 	 */
 	public Tablero ponerIDCarta(Dificultad dificultad);
 
