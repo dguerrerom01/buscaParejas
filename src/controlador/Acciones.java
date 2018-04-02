@@ -2,8 +2,11 @@ package controlador;
 
 import java.awt.Color;
 
+import javax.swing.ImageIcon;
+
 import modelo.Carta;
 import modelo.Tablero;
+import utiles.Utiles;
 import vista.Botonera;
 
 public class Acciones implements Accionable {
@@ -14,17 +17,18 @@ public class Acciones implements Accionable {
 	private int[][] pareja = new int[2][2]; // pareja[id cartaUno,posicion cartaUno][id cartaDos, posicion cartaDos]
 	private Botonera botonera;
 	private Carta[] cartas;
-	private Color[] colores;
+	private StringBuilder[] nombreImagenes;
 
 	@Override
 	public void game(Botonera botonera, Dificultad dificultad) {
 		this.tablero = iniciador.crearTablero(dificultad);
 		this.botonera = botonera;
 		this.cartas = tablero.getCartas();
-		this.colores = new Color[25];
-		for (int i = 0; i < colores.length; i++) {
-			colores[i] = new Color((int) (Math.random() * 255), (int) (Math.random() * 255),
-					(int) (Math.random() * 255));
+		this.nombreImagenes=new StringBuilder[dificultad.getValor()];
+		for (int i = 0; i < nombreImagenes.length; i++) {
+			nombreImagenes[i]= new StringBuilder("/assets/");
+			nombreImagenes[i].append(String.valueOf(i));
+			nombreImagenes[i].append(".jpg");
 		}
 
 	}
@@ -57,12 +61,10 @@ public class Acciones implements Accionable {
 			}
 
 			ponerNumeros();
-			System.out.println("la carta actual es " + pareja[0][0] + " " + pareja[1][0]);
 			if (pareja[0][0] != 0 & pareja[1][0] != 0) {
 				if (pareja[0][0] == pareja[1][0]) {
-					System.out.println("pareja");
+					
 				} else {
-					System.out.println("no pareja");
 					cartas[pareja[0][1]].setVelada(true);
 					cartas[pareja[1][1]].setVelada(true);
 					this.tablero.fallo();
@@ -76,15 +78,12 @@ public class Acciones implements Accionable {
 	}
 
 	private void ponerNumeros() {
-		// Color[]
-		// colores={Color.BLACK,Color.blue,Color.cyan,Color.DARK_GRAY,Color.gray,Color.GREEN,Color.LIGHT_GRAY,Color.MAGENTA,Color.ORANGE,Color.PINK,Color.RED,Color.white,Color.YELLOW
-		// };
-		// el array de imagenes seria algo aprecido a esto
 		for (int i = 0; i < botonera.botones.length; i++) {
 			if (!cartas[i].isVelada()) {
-				botonera.botones[i].setBackground(colores[cartas[i].getId() - 1]);
+				ImageIcon asd = new ImageIcon(getClass().getResource(nombreImagenes[cartas[i].getId()-1].toString()));
+				botonera.botones[i].setIcon(Utiles.createScaledIcon(asd, botonera.botones[i].getHeight()));
 			} else {
-				botonera.botones[i].setBackground(null);
+				botonera.botones[i].setIcon(null);
 			}
 		}
 	}
