@@ -30,25 +30,7 @@ public class BuscaParejasUI extends JFrame {
 	private JPanel juego;
 	protected JButton btnIniciarGame;
 	protected Dificultad dificultad;
-	/**
-	 * Launch the application.
-	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					BuscaParejasUI frame = new BuscaParejasUI();
-//					frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
 
-	/**
-	 * Create the frame.
-	 */
 	public BuscaParejasUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 280, 336);

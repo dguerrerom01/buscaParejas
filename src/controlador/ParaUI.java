@@ -2,7 +2,6 @@ package controlador;
 
 import modelo.Tablero;
 import vista.BuscaParejasUI;
-import vista.UITest;
 
 public class ParaUI extends BuscaParejasUI {
 	Acciones acciones = new Acciones();
