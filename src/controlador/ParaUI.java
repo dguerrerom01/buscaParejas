@@ -1,23 +1,25 @@
 package controlador;
 
 import modelo.Tablero;
-import vista.UITest;
+import vista.BuscaParejasUI;
 
-public class ParaUI extends UITest {
-	MyActionListener listener = new MyActionListener(this);
+public class ParaUI extends BuscaParejasUI {
+	Acciones acciones = new Acciones();
+	MyActionListener listener = new MyActionListener(this,acciones);
 	Iniciador iniciador = new Iniciador();
 	Tablero tablero;
 	Control control;
-	Acciones acciones = new Acciones();
+
+
 	public ParaUI() {
 		super();
-		// boton de "start game"
 		btnIniciarGame.addActionListener(listener);
 	}
 
 	public void lanzarGame() {
-		acciones.game();
+		for (int i = 0; i < botonera.botones.length; i++) {
+			botonera.botones[i].addActionListener(listener);
+		}
+		acciones.game(botonera,dificultad);
 	}
-
-
 }

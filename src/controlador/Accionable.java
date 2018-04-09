@@ -1,22 +1,38 @@
 package controlador;
 
 import modelo.Tablero;
+import vista.Botonera;
 
 public interface Accionable {
 
 	/**
-	 * bucle que lleva el curso del juego
+	 * inicia el juego, creando el tablero y su botonera dependiendo de la dificultad, tambien crea las referencias a las imagenes
 	 */
-	public void game( );
+	public void game(Botonera botonera, Dificultad dificultad);
 	
 	
 	/**
 	 * funcionamiento del click izquierdo
 	 */
-	public void accionClickIzquierdo();
+	public	void accionClickIzquierdo(int pulsado);
 
 
-	public void jugada(Tablero tablero);
+	/**
+	 * lleva el ritmo del juego, mientras no ganes o pierdas se sigue ejecutando
+	 */
+	void jugada(int pulsado);
+
+
+	
+
+
+
+
+
+	
+
+
+	
 
 
 	

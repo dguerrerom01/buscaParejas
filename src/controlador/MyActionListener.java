@@ -10,9 +10,10 @@ import javax.swing.JButton;
 public class MyActionListener implements ActionListener,MouseListener{
 
 	ParaUI paraUI;
-	Acciones acciones = new Acciones();
-	public MyActionListener(ParaUI paraUI) {
+	Acciones acciones;
+	public MyActionListener(ParaUI paraUI, Acciones acciones) {
 		this.paraUI= paraUI;
+		this.acciones=acciones;
 	}
 
 	@Override
@@ -20,14 +21,14 @@ public class MyActionListener implements ActionListener,MouseListener{
 		if (((JButton) e.getSource()).getName() == "btnIniciar") {
 			paraUI.lanzarGame();
 		}
+			else{
+			int pulsado = Integer.valueOf(((JButton) e.getSource()).getName());
+			acciones.jugada(pulsado);
+		}
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		if (e.getButton()==1) {
-			acciones.jugada();//TODO aqui o en acciones
-		}
-	}
+	public void mouseClicked(MouseEvent e) {}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {}
